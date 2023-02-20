@@ -1,16 +1,17 @@
-import dto.ResponseCode;
 import dto.User;
 import io.restassured.response.ValidatableResponse;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import services.GetUserApi;
 import services.UserApi;
 
 import java.util.Random;
 
-public class CreateUserTest {
+public class GetUserTest {
 	@Test
 	void createUser(){
 		UserApi userApi = new UserApi();
+		GetUserApi getUserApi = new GetUserApi();
 		User user = User.builder()
 				.email("Email" + new Random().nextInt(1000000))
 				.firstName("firstName"+ new Random().nextInt(1000000))
@@ -19,18 +20,22 @@ public class CreateUserTest {
 				.lastName("lastName" + new Random().nextInt(1000000))
 				.password("password" + new Random().nextInt(1000000))
 				.phone("phone: " + new Random().nextInt(1000000000))
-				.username("username" +  new Random().nextInt(1000000000))
+				.username("username" +  + new Random().nextInt(1000000))
 				.build();
 
-		ValidatableResponse response = userApi.createUser(user);
+		userApi.createUser(user);
 
-		ResponseCode userOut = response.extract().body().as(ResponseCode.class);
+		ValidatableResponse response = getUserApi.getUser(user);
 
-			Assertions.assertAll("Check response",
-					() -> Assertions.assertEquals(200, userOut.getCode()),
-					() -> Assertions.assertEquals("unknown", userOut.getType()),
-					() -> Assertions.assertEquals(user.getId().toString(), userOut.getMessage())
-        );
+		User newUser = response.extract().body().as(User.class);
+
+		Assertions.assertAll("Check response",
+				() -> Assertions.assertEquals( user.getUserStatus(), newUser.getUserStatus()),
+				() -> Assertions.assertEquals(user.getPhone(), newUser.getPhone()),
+				() -> Assertions.assertEquals(user.getEmail(), newUser.getEmail())
+		);
+
+
 	}
 
 
