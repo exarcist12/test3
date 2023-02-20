@@ -21,4 +21,5 @@ public class CreateUserTest {
 		ValidatableResponse response = userApi.createUser(user);
 	}
 
+
 }
