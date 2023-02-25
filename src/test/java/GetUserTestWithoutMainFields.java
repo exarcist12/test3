@@ -8,29 +8,25 @@ import services.UserApi;
 import java.util.Random;
 
 public class GetUserTestWithoutMainFields {
-	@Test
-	void createUser(){
-		UserApi userApi = new UserApi();
-		GetUserApi getUserApi = new GetUserApi();
-		User user = User.builder()
-				.email("Email" + new Random().nextInt(1000000))
-				.firstName("firstName"+ new Random().nextInt(1000000))
-				.username("null")
-				.id(new Random().nextInt(1000000))
-				.build();
+  @Test
+  void createUser(){
+    UserApi userApi = new UserApi();
+    GetUserApi getUserApi = new GetUserApi();
+    User user = User.builder()
+        .email("Email" + new Random().nextInt(1000000))
+        .firstName("firstName"+ new Random().nextInt(1000000))
+        .username("null")
+        .id(new Random().nextInt(1000000))
+        .build();
 
-		userApi.createUser(user);
+    userApi.createUser(user);
 
-		ValidatableResponse response = getUserApi.getUser(user);
+    ValidatableResponse response = getUserApi.getUser(user);
 
-		User newUser = response.extract().body().as(User.class);
+    User newUser = response.extract().body().as(User.class);
 
-		Assertions.assertAll("Check response",
-				() -> Assertions.assertEquals(user.getPhone(), newUser.getPhone())
-		);
-
-
-	}
-
-
+    Assertions.assertAll("Check response",
+        () -> Assertions.assertEquals(user.getPhone(), newUser.getPhone())
+    );
+  }
 }

@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResponseCode {
-	private Long code;
-	private String message;
-	private String type;
+  private Long code;
+  private String message;
+  private String type;
 }

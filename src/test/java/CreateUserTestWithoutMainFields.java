@@ -6,21 +6,19 @@ import org.junit.jupiter.api.Test;
 import services.UserApi;
 
 public class CreateUserTestWithoutMainFields {
-	@Test
-	void createUser(){
-		UserApi userApi = new UserApi();
-		User user = User.builder()
-				.email("text@text.ru")
-				.build();
+  @Test
+  void createUser(){
+    UserApi userApi = new UserApi();
+    User user = User.builder()
+        .email("text@text.ru")
+        .build();
 
-		ValidatableResponse response = userApi.createUser(user);
+    ValidatableResponse response = userApi.createUser(user);
 
-		ResponseCode responseCode = response.extract().body().as(ResponseCode.class);
+    ResponseCode responseCode = response.extract().body().as(ResponseCode.class);
 
-		Assertions.assertAll("Check response",
-			() -> Assertions.assertEquals("null", responseCode.getMessage())
-        );
-	}
-
-
+    Assertions.assertAll("Check response",
+        () -> Assertions.assertEquals("null", responseCode.getMessage())
+    );
+  }
 }
