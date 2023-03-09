@@ -32,4 +32,10 @@ public class CreateUserTest {
         () -> Assertions.assertEquals(user.getId().toString(), userOut.getMessage())
     );
   }
+
+
+  @Test
+  void createUser22() {
+    String BASE_URL = System.getProperty("webdriver.base.url");
+  }
 }

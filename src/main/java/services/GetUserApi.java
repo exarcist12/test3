@@ -9,7 +9,7 @@ import io.restassured.specification.RequestSpecification;
 
 
 public class GetUserApi {
-  private  static String BASE_URL = "https://petstore.swagger.io/v2";
+  private  static String BASE_URL = System.getProperty("webdriver.base.url");
 
   private RequestSpecification spec;
 

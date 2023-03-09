@@ -8,7 +8,7 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 
 public class UserApi {
-  private static final String BASE_URL = "https://petstore.swagger.io/v2";
+  private  static String BASE_URL = System.getProperty("webdriver.base.url");
   private static final String BASE_PATH = "/user";
   private RequestSpecification spec;
 
