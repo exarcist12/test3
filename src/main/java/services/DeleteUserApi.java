@@ -9,14 +9,12 @@ import static io.restassured.RestAssured.given;
 
 
 public class DeleteUserApi {
-  private  static String BASE_URL = System.getProperty("webdriver.base.url");
+  BaseSpec baseSpec = new BaseSpec();
 
   private RequestSpecification spec;
 
   public DeleteUserApi(){
-    spec = given()
-      .baseUri(BASE_URL)
-      .contentType(ContentType.JSON);
+    spec = baseSpec.getSpec();
   }
 
   public ValidatableResponse deleteUser(User user){

@@ -9,14 +9,12 @@ import io.restassured.specification.RequestSpecification;
 
 
 public class GetUserApi {
-  private  static String BASE_URL = System.getProperty("webdriver.base.url");
+  BaseSpec baseSpec = new BaseSpec();
 
   private RequestSpecification spec;
 
   public GetUserApi(){
-    spec = given()
-      .baseUri(BASE_URL)
-      .contentType(ContentType.JSON);
+    spec = baseSpec.getSpec();
   }
 
   public ValidatableResponse getUser(User user){
