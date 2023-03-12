@@ -37,7 +37,7 @@ public class CreateUserTestNegativeLongId {
     ValidatableResponse response = userApi.createUser(user);
     ResponseCode code = response.extract().body().as(ResponseCode.class);
     Assertions.assertAll("Check response",
-            () -> Assertions.assertEquals(code.getCode(), "500"),
-            () -> Assertions.assertEquals(code.getMessage(), "something bad happened"));
+        () -> Assertions.assertEquals(code.getCode(), "500"),
+        () -> Assertions.assertEquals(code.getMessage(), "something bad happened"));
   }
 }

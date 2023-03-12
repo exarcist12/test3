@@ -1,12 +1,9 @@
 package services;
-
-import dto.User;
-import io.restassured.http.ContentType;
-import io.restassured.response.ValidatableResponse;
-import io.restassured.specification.RequestSpecification;
-
 import static io.restassured.RestAssured.given;
 
+import dto.User;
+import io.restassured.response.ValidatableResponse;
+import io.restassured.specification.RequestSpecification;
 
 public class DeleteUserApi {
   BaseSpec baseSpec = new BaseSpec();

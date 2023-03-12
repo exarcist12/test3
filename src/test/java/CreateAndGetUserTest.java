@@ -46,8 +46,8 @@ public class CreateAndGetUserTest {
     ValidatableResponse response = getUserApi.getUser(user);
     User newUser = response.extract().body().as(User.class);
     Assertions.assertAll("Check response",
-            () -> Assertions.assertEquals(user.getUserStatus(), newUser.getUserStatus()),
-            () -> Assertions.assertEquals(user.getPhone(), newUser.getPhone()),
-            () -> Assertions.assertEquals(user.getEmail(), newUser.getEmail()));
+        () -> Assertions.assertEquals(user.getUserStatus(), newUser.getUserStatus()),
+        () -> Assertions.assertEquals(user.getPhone(), newUser.getPhone()),
+        () -> Assertions.assertEquals(user.getEmail(), newUser.getEmail()));
   }
 }
