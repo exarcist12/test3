@@ -9,7 +9,7 @@ import io.restassured.specification.RequestSpecification;
 
 
 public class GetUserApi {
-  BaseSpec baseSpec = new BaseSpec();
+  private BaseSpec baseSpec = new BaseSpec();
 
   private RequestSpecification spec;
 

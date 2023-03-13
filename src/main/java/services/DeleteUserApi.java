@@ -6,7 +6,7 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 
 public class DeleteUserApi {
-  BaseSpec baseSpec = new BaseSpec();
+  private BaseSpec baseSpec = new BaseSpec();
 
   private RequestSpecification spec;
 

@@ -8,9 +8,7 @@ import io.restassured.specification.RequestSpecification;
 
 public class UserApi {
 
-  BaseSpec baseSpec = new BaseSpec();
-
-  private  static String BASE_URL = System.getProperty("webdriver.base.url");
+  private BaseSpec baseSpec = new BaseSpec();
   private static final String BASE_PATH = "/user";
   private RequestSpecification spec;
 

@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Test;
 import services.DeleteUserApi;
 import services.UserApi;
 
-public class CreateUserTestWithoutUsername {
+public class CreateUserWithoutUsernameNegativeTest {
 
-  UserApi userApi = new UserApi();
-  DeleteUserApi deleteUserApi = new DeleteUserApi();
+  private UserApi userApi = new UserApi();
+  private DeleteUserApi deleteUserApi = new DeleteUserApi();
 
-  User user = User.builder()
+  private User user = User.builder()
           .email("text@text.ru")
           .build();
 

@@ -13,13 +13,13 @@ import java.util.Random;
 
 public class CreateAndGetUserTest {
 
-  Faker faker = new Faker();
-  UserApi userApi = new UserApi();
+  private Faker faker = new Faker();
+  private UserApi userApi = new UserApi();
 
-  GetUserApi getUserApi = new GetUserApi();
-  DeleteUserApi deleteUserApi = new DeleteUserApi();
+  private GetUserApi getUserApi = new GetUserApi();
+  private DeleteUserApi deleteUserApi = new DeleteUserApi();
 
-  User user = User.builder()
+  private User user = User.builder()
           .email(faker.animal().name() + faker.cat().name())
           .firstName(faker.animal().name() + faker.cat().name())
           .id(String.valueOf(new Random().nextInt(1000000)))
