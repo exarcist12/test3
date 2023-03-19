@@ -1,5 +1,7 @@
-package dto;
 
+package dto.course.mock;
+
+import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,8 +11,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponseCode {
-  private String code;
-  private String message;
-  private String type;
+public class Meta {
+
+    @SerializedName("total")
+    private Long total;
+
 }

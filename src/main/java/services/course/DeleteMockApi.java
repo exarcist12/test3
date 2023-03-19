@@ -1,10 +1,6 @@
 package services.course;
 
-import com.google.gson.Gson;
-import dto.course.mock.Headers;
-import dto.course.mock.Mock;
-import dto.course.mock.Request;
-import dto.course.mock.Response;
+import dto.course.mock.Mapping;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 
@@ -20,11 +16,11 @@ public class DeleteMockApi {
     spec = baseCourseSpecSpec.getSpec();
   }
 
-  public void deleteMock(Mock mock){
+  public void deleteMock(Mapping mapping){
 
-    String basePath = "/__admin/mappings/"+ mock.getId();
+    String basePath = "/__admin/mappings/"+ mapping.getId();
 
-    ValidatableResponse validatableResponse = given(spec).basePath(basePath).log().all().when().delete().then().log().all();
+    given(spec).basePath(basePath).log().all().when().delete().then().log().all();
 
   }
 }

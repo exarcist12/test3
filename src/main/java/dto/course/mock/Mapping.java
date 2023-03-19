@@ -13,7 +13,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Mock {
+public class Mapping {
 
     @SerializedName("name")
     private String name;

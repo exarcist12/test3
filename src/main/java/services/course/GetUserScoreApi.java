@@ -1,10 +1,8 @@
 package services.course;
 
-import dto.User;
 import dto.course.UserDto;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
-import services.BaseSpec;
 
 import static io.restassured.RestAssured.given;
 
