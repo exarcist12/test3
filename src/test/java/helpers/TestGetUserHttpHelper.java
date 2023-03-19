@@ -1,7 +1,7 @@
 package helpers;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
-import dto.course.UserDto;
+
 import dto.course.mock.Mapping;
 import dto.course.mock.Mappings;
 import io.restassured.response.ValidatableResponse;
@@ -9,6 +9,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import services.course.*;
+import dto.course.UserDto;
 
 public class TestGetUserHttpHelper {
   private CreateMockApi createMockApi = new CreateMockApi();

@@ -1,11 +1,9 @@
 package services.course;
-
-import dto.course.UserDto;
-import io.restassured.response.ValidatableResponse;
-import io.restassured.specification.RequestSpecification;
-
 import static io.restassured.RestAssured.given;
 
+import io.restassured.response.ValidatableResponse;
+import io.restassured.specification.RequestSpecification;
+import dto.course.UserDto;
 
 public class GetUserScoreApi {
   private BaseCourseSpec baseCourseSpec = new BaseCourseSpec();

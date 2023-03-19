@@ -1,11 +1,8 @@
 package services.course;
-
-import dto.course.mock.Mapping;
-import io.restassured.response.ValidatableResponse;
-import io.restassured.specification.RequestSpecification;
-
 import static io.restassured.RestAssured.given;
 
+import dto.course.mock.Mapping;
+import io.restassured.specification.RequestSpecification;
 
 public class DeleteMockApi {
   private BaseCourseSpec baseCourseSpecSpec = new BaseCourseSpec();

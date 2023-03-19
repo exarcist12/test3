@@ -14,9 +14,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Mappings {
 
-    @SerializedName("mappings")
-    private List<Mapping> mappings;
-    @SerializedName("meta")
-    private Meta meta;
+  @SerializedName("mappings")
+  private List<Mapping> mappings;
+
+  @SerializedName("meta")
+  private Meta meta;
 
 }

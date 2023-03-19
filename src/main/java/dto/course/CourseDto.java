@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CourseDto {
 
-    private String name;
-    private Integer price;
+  private String name;
+  private Integer price;
 
 }

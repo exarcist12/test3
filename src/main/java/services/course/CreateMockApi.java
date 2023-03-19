@@ -1,6 +1,6 @@
 package services.course;
+import static io.restassured.RestAssured.given;
 
-import com.google.gson.Gson;
 import dto.course.UserDto;
 import dto.course.mock.Headers;
 import dto.course.mock.Mapping;
@@ -8,10 +8,7 @@ import dto.course.mock.Request;
 import dto.course.mock.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
-
-import static io.restassured.RestAssured.given;
-
-
+import com.google.gson.Gson;
 public class CreateMockApi {
   private BaseCourseSpec baseCourseSpecSpec = new BaseCourseSpec();
   private RequestSpecification spec;

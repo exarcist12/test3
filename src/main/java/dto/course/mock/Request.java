@@ -13,14 +13,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Request {
 
-    @SerializedName("method")
-    private String method;
+  @SerializedName("method")
+  private String method;
 
-    @SerializedName("url")
-    private String url;
+  @SerializedName("url")
+  private String url;
 
-    @SerializedName("urlPathPattern")
-    private String urlPathPattern;
+  @SerializedName("urlPathPattern")
+  private String urlPathPattern;
 
 
 }

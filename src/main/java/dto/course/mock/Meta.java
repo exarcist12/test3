@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Meta {
 
-    @SerializedName("total")
-    private Long total;
+  @SerializedName("total")
+  private Long total;
 
 }

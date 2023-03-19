@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ScoreDto {
 
-    private String name;
-    private Integer score;
+  private String name;
+  private Integer score;
 
 
 }

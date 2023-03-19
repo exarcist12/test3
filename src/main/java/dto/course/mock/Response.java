@@ -13,13 +13,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Response {
 
-    @SerializedName("body")
-    private String body;
+  @SerializedName("body")
+  private String body;
 
-    @SerializedName("headers")
-    private Headers headers;
+  @SerializedName("headers")
+  private Headers headers;
 
-    @SerializedName("status")
-    private Integer status;
+  @SerializedName("status")
+  private Integer status;
 
 }

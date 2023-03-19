@@ -15,20 +15,20 @@ import java.util.UUID;
 @AllArgsConstructor
 public class Mapping {
 
-    @SerializedName("name")
-    private String name;
+  @SerializedName("name")
+  private String name;
 
-    @SerializedName("request")
-    private Request request;
+  @SerializedName("request")
+  private Request request;
 
-    @SerializedName("response")
-    private Response response;
+  @SerializedName("response")
+  private Response response;
 
-    @SerializedName("id")
-    private UUID id;
+  @SerializedName("id")
+  private UUID id;
 
-    @SerializedName("uuid")
-    private UUID uuid;
+  @SerializedName("uuid")
+  private UUID uuid;
 
 
 }

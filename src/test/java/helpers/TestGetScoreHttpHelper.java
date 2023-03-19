@@ -1,7 +1,7 @@
 package helpers;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
-import dto.course.CourseDto;
+
 import dto.course.ScoreDto;
 import dto.course.UserDto;
 import dto.course.mock.Mapping;

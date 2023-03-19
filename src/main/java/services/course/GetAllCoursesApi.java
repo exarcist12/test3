@@ -1,14 +1,10 @@
 package services.course;
+import static io.restassured.RestAssured.given;
 
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.parsing.Parser;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-
-import static io.restassured.RestAssured.given;
-
+import io.restassured.http.ContentType;
 
 public class GetAllCoursesApi {
   private BaseCourseSpec baseCourseSpecSpec = new BaseCourseSpec();
