@@ -15,8 +15,9 @@
         <surefire.plugin.version>2.22.2</surefire.plugin.version>
 
         <browser>chrome</browser>
-        <webdriver.base.url>https://petstore.swagger.io/v2</webdriver.base.url>
-        <webdriver.basecourse.url>https://petstore.swagger.io/v2</webdriver.basecourse.url>
+<!--        <webdriver.base.url>https://petstore.swagger.io/v2</webdriver.base.url>-->
+<!--        <webdriver.basecourse.url>http://127.0.0.1:9080</webdriver.basecourse.url>-->
+        <webdriver.base.url>http://127.0.0.1:9080</webdriver.base.url>
     </properties>
     <dependencies>
         <dependency>

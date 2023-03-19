@@ -18,7 +18,7 @@ public class GetAllUsersApi {
     spec = baseCourseSpecSpec.getSpec();
   }
 
-  public ValidatableResponse getUsers(List<UserDto> users){
+  public ValidatableResponse getUsers(){
     String basePath = "/user/get/all";
     return   given(spec).basePath(basePath).log().all().when().get().then().log().all();
   }
