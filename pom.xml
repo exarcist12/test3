@@ -21,7 +21,7 @@
         <parallel>all</parallel>
         <perCoreThreadCount>false</perCoreThreadCount>
         <useUnlimitedThreads>true</useUnlimitedThreads>
-        <threadCountMethods>32</threadCountMethods>
+        <threadCountMethods>3</threadCountMethods>
         <aspectj.version>1.9.6</aspectj.version>
     </properties>
     <dependencies>
@@ -86,7 +86,7 @@
 <!--        <dependency>-->
 <!--            <groupId>org.aspectj</groupId>-->
 <!--            <artifactId>aspectjweaver</artifactId>-->
-<!--            <version>1.9.19</version>-->
+<!--            <version>1.9.6</version>-->
 <!--        </dependency>-->
     </dependencies>
     <build>
@@ -96,12 +96,18 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.plugin.version}</version>
                 <configuration>
-<!--                    <forkCount>${forkCount}</forkCount>-->
-<!--                    <reuseForks>${reuseForks}</reuseForks>-->
-<!--                    <parallel>${parallel}</parallel>-->
-<!--                    <perCoreThreadCount>${perCoreThreadCount}</perCoreThreadCount>-->
-<!--                    <useUnlimitedThreads>${useUnlimitedThreads}</useUnlimitedThreads>-->
-<!--                    <threadCountMethods>${threadCountMethods}</threadCountMethods>-->
+                    <forkCount>${forkCount}</forkCount>
+                    <reuseForks>${reuseForks}</reuseForks>
+                    <parallel>${parallel}</parallel>
+                    <perCoreThreadCount>${perCoreThreadCount}</perCoreThreadCount>
+                    <useUnlimitedThreads>${useUnlimitedThreads}</useUnlimitedThreads>
+                    <threadCountMethods>${threadCountMethods}</threadCountMethods>
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>io.qameta.allure.junit5.AllureJunit5</value>
+                        </property>
+                    </properties>
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
@@ -118,17 +124,27 @@
                         <test.ptoject.status>test</test.ptoject.status>
                         <testFailureIgnore>true</testFailureIgnore>
                     </systemPropertyVariables>
-<!--                    <argLine>-->
-<!--                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"-->
-<!--                    </argLine>-->
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
                 </configuration>
-<!--                <dependencies>-->
-<!--                    <dependency>-->
-<!--                        <groupId>org.aspectj</groupId>-->
-<!--                        <artifactId>aspectjweaver</artifactId>-->
-<!--                        <version>1.9.19</version>-->
-<!--                    </dependency>-->
-<!--                </dependencies>-->
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-api</artifactId>
+                        <version>${junit.jupiter.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>${junit.jupiter.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
