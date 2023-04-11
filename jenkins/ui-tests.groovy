@@ -14,14 +14,20 @@ timeout(60) {
                 currentBuild.result = 'UNSTABLE'
             }
         }
-//        stage("Publish allure results") {
-//            allure([
-//                    includeProperties: false,
-//                    jdk: '',
-//                    properties: [],
-//                    reportBuildPolicy: 'ALWAYS',
-//                    results: [[path: 'allure-results']]
-//            ])
-//        }
+        stage("Publish artifacts"){
+            archiveArtifacts artifacts: '**/target/**/*.xml',
+                    allowEmptyArchive: true,
+                    fingerprint: true,
+                    onlyIfSuccessful: true
+        }
+        stage("Publish allure results") {
+            allure([
+                    includeProperties: false,
+                    jdk: '',
+                    properties: [],
+                    reportBuildPolicy: 'ALWAYS',
+                    results: [[path: 'allure-results']]
+            ])
+        }
     }
 }
