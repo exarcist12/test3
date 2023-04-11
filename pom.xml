@@ -96,12 +96,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.plugin.version}</version>
                 <configuration>
-                    <forkCount>${forkCount}</forkCount>
-                    <reuseForks>${reuseForks}</reuseForks>
-                    <parallel>${parallel}</parallel>
-                    <perCoreThreadCount>${perCoreThreadCount}</perCoreThreadCount>
-                    <useUnlimitedThreads>${useUnlimitedThreads}</useUnlimitedThreads>
-                    <threadCountMethods>${threadCountMethods}</threadCountMethods>
+<!--                    <forkCount>${forkCount}</forkCount>-->
+<!--                    <reuseForks>${reuseForks}</reuseForks>-->
+<!--                    <parallel>${parallel}</parallel>-->
+<!--                    <perCoreThreadCount>${perCoreThreadCount}</perCoreThreadCount>-->
+<!--                    <useUnlimitedThreads>${useUnlimitedThreads}</useUnlimitedThreads>-->
+<!--                    <threadCountMethods>${threadCountMethods}</threadCountMethods>-->
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
