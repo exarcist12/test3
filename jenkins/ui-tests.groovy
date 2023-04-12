@@ -14,6 +14,14 @@ timeout(60) {
                 currentBuild.result = 'UNSTABLE'
             }
         }
+        stage('Generate environment.txt'){
+            dir("allure-results"){
+                sh """
+                echo \"browser=$BROWSER\" > environment.txt
+                echo \"browser_version=$BROWSER_VERSION\" >> environment.txt
+                """
+            }
+        }
         stage("Publish artifacts"){
             archiveArtifacts artifacts: '**/target/**/*.xml',
                     allowEmptyArchive: true,
