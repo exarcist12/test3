@@ -18,6 +18,13 @@
 <!--        <webdriver.base.url>https://petstore.swagger.io/v2</webdriver.base.url>-->
 <!--        <webdriver.basecourse.url>http://127.0.0.1:9080</webdriver.basecourse.url>-->
         <webdriver.base.url>http://127.0.0.1:9080</webdriver.base.url>
+        <forkCount>1</forkCount>
+        <reuseForks>true</reuseForks>
+        <parallel>all</parallel>
+        <perCoreThreadCount>false</perCoreThreadCount>
+        <useUnlimitedThreads>true</useUnlimitedThreads>
+        <threadCountMethods>3</threadCountMethods>
+        <aspectj.version>1.9.6</aspectj.version>
     </properties>
     <dependencies>
         <dependency>
@@ -78,6 +85,11 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.aspectj</groupId>-->
+<!--            <artifactId>aspectjweaver</artifactId>-->
+<!--            <version>${aspectj.version}</version>-->
+<!--        </dependency>-->
     </dependencies>
     <build>
         <plugins>
@@ -86,13 +98,55 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.plugin.version}</version>
                 <configuration>
+                    <forkCount>${forkCount}</forkCount>
+                    <reuseForks>${reuseForks}</reuseForks>
+                    <parallel>${parallel}</parallel>
+                    <perCoreThreadCount>${perCoreThreadCount}</perCoreThreadCount>
+                    <useUnlimitedThreads>${useUnlimitedThreads}</useUnlimitedThreads>
+                    <threadCountMethods>${threadCountMethods}</threadCountMethods>
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>io.qameta.allure.junit5.AllureJunit5</value>
+                        </property>
+                    </properties>
+                    <systemProperties>
+                        <property>
+                            <name>allure.results.directory</name>
+                            <value>${project.basedir}/allure-results</value>
+                        </property>
+                        <property>
+                            <name>junit.jupiter.extensions.autodetection.enabled</name>
+                            <value>true</value>
+                        </property>
+                    </systemProperties>
                     <systemPropertyVariables>
                         <browser>${browser}</browser>
                         <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
                         <test.ptoject.status>test</test.ptoject.status>
                         <testFailureIgnore>true</testFailureIgnore>
                     </systemPropertyVariables>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-api</artifactId>
+                        <version>${junit.jupiter.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>${junit.jupiter.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
