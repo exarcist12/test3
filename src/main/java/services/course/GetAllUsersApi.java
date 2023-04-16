@@ -1,6 +1,7 @@
 package services.course;
 import static io.restassured.RestAssured.given;
 
+import io.qameta.allure.Step;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.response.ValidatableResponse;
 
@@ -13,6 +14,7 @@ public class GetAllUsersApi {
     spec = baseCourseSpecSpec.getSpec();
   }
 
+  @Step("Получаем всех пользователей")
   public ValidatableResponse getUsers(){
     String basePath = "/user/get/all";
     return   given(spec).basePath(basePath).log().all().when().get().then().log().all();

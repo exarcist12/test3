@@ -10,6 +10,7 @@ import dto.course.mock.Mappings;
 import io.restassured.response.ValidatableResponse;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -47,6 +48,7 @@ public class TestGetScoreHttpHelper {
     deleteMockApi.deleteMock(mapping);
   }
 
+  @DisplayName("Проверка получения оценки пользователя")
   @Test
   void createScoreTest(){
     ValidatableResponse response = getUserScoreApi.getUserScore(userDto);

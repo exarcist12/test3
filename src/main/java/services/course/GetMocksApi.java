@@ -2,6 +2,7 @@ package services.course;
 import static io.restassured.RestAssured.given;
 
 import dto.course.mock.*;
+import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import com.google.gson.Gson;
@@ -13,6 +14,7 @@ public class GetMocksApi {
     spec = baseCourseSpecSpec.getSpec();
   }
 
+  @Step("Получаем все созданные заглушки")
   public Mappings getMappings(){
 
     String basePath = "/__admin/mappings";
