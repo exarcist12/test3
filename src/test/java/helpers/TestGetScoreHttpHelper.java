@@ -10,6 +10,7 @@ import dto.course.mock.Mappings;
 import io.restassured.response.ValidatableResponse;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -48,6 +49,7 @@ public class TestGetScoreHttpHelper {
   }
 
   @Test
+  @DisplayName("Проверка совпадения оценки")
   void createScoreTest(){
     ValidatableResponse response = getUserScoreApi.getUserScore(userDto);
     ScoreDto scoreDto2 = response.extract().body().as(ScoreDto.class);

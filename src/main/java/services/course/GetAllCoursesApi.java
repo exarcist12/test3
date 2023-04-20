@@ -1,6 +1,7 @@
 package services.course;
 import static io.restassured.RestAssured.given;
 
+import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
@@ -16,6 +17,7 @@ public class GetAllCoursesApi {
     spec = baseCourseSpecSpec.getSpec();
   }
 
+  @Step("Загрузка курсов")
   public ValidatableResponse getCourses() {
     String basePath = "/cource/get/all";
     return   given(spec).contentType(ContentType.JSON).basePath(basePath).log().all().when().get().then().log().all();

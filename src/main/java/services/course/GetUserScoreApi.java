@@ -1,6 +1,7 @@
 package services.course;
 import static io.restassured.RestAssured.given;
 
+import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import dto.course.UserDto;
@@ -14,6 +15,7 @@ public class GetUserScoreApi {
     spec = baseCourseSpec.getSpec();
   }
 
+  @Step("Загрузка оценки по пользователю")
   public ValidatableResponse getUserScore(UserDto user){
     String basePath = "/user/get/"+ user.getName();
     return   given(spec).basePath(basePath).log().all().when().get().then().log().all();

@@ -8,10 +8,7 @@ import dto.course.annotation.Driver;
 import dto.course.mock.Mapping;
 import dto.course.mock.Mappings;
 import io.restassured.response.ValidatableResponse;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -56,6 +53,7 @@ public class TestGetCoursesHttpHelper {
   }
 
   @Test
+  @DisplayName("Проверка выгрузки всех курсов")
   void createCourseTest(){
     ValidatableResponse response = getAllCoursesApi.getCourses();
     CourseDto[] courses2 = response.extract().body().as(CourseDto[].class);

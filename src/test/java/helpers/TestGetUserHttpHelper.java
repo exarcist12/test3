@@ -8,6 +8,7 @@ import dto.course.mock.Mappings;
 import io.restassured.response.ValidatableResponse;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -49,6 +50,7 @@ public class TestGetUserHttpHelper {
   }
 
   @Test
+  @DisplayName("Проверка получения пользователя")
   void createUsersTest(){
     ValidatableResponse response = getAllUsersApi.getUsers();
     UserDto user = response.extract().body().as(UserDto.class);
